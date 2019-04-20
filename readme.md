@@ -11,3 +11,4 @@
 Java Script
 * https://github.com/bpmn-io/moddle
 * https://typeorm.io/#/
+* https://github.com/warrenbell/cleanarch-tsoo
