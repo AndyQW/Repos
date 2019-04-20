@@ -12,3 +12,6 @@ Java Script
 * https://github.com/bpmn-io/moddle
 * https://typeorm.io/#/
 * https://github.com/warrenbell/cleanarch-tsoo
+
+BLOG
+* https://blog.cleancoder.com/uncle-bob/2014/11/24/FPvsOO.html
