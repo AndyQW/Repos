@@ -1,6 +1,6 @@
-#Dynamic Form Composition
-#This is a rare occurrence, but sometimes it’s necessary to create or modify a form dynamically in your view. This is possible by creating internal subclasses:
-
+# Dynamic Form Composition
+# This is a rare occurrence, but sometimes it’s necessary to create or modify a form dynamically in your view. This is possible by creating internal subclasses:
+# https://wtforms.readthedocs.io/en/stable/fields.html#field-definitions
 def my_view():
     class F(MyBaseForm):
         pass
