@@ -295,3 +295,68 @@ user.goals.append(goal)
 db.session.commit()
 
 print(user.to_dict(show=['goals', 'goals.accomplished']))
+
+#A better way is adding a get_or_create convenience method to the BaseModel SQLAlchemy class from the previous post:
+
+from sqlalchemy.exc import IntegrityError, OperationalError
+
+class BaseModel(db.Model):
+    __abstract__ = True
+
+    ...
+
+    @classmethod
+    def _get_or_create(
+        cls,
+        _session=None,
+        _filters=None,
+        _defaults={},
+        _retry_count=0,
+        _max_retries=3,
+        **kwargs
+    ):
+        if not _session:
+            _session = db.session
+        query = _session.query(cls)
+        if _filters is not None:
+            query = query.filter(*_filters)
+        if len(kwargs) > 0:
+            query = query.filter_by(**kwargs)
+
+        instance = query.first()
+        if instance is not None:
+            return instance, False
+
+        _session.begin_nested()
+        try:
+            kwargs.update(_defaults)
+            instance = cls(**kwargs)
+            _session.add(instance)
+            _session.commit()
+            return instance, True
+
+        except IntegrityError:
+            _session.rollback()
+            instance = query.first()
+            if instance is None:
+                raise
+            return instance, False
+
+        except OperationalError:
+            _session.rollback()
+            instance = query.first()
+            if instance is None:
+                if _retry_count < _max_retries:
+                    return cls._get_or_create(
+                        _filters=_filters,
+                        _defaults=_defaults,
+                        _retry_count=_retry_count + 1,
+                        _max_retries=_max_retries,
+                        **kwargs
+                    )
+                raise
+            return instance, False
+
+    @classmethod
+    def get_or_create(cls, **kwargs):
+        return cls._get_or_create(**kwargs)[0]
