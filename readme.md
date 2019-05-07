@@ -14,6 +14,24 @@
 * https://typeorm.io/#/
 * https://github.com/warrenbell/cleanarch-tsoo
 * https://www.amcharts.com/download/
+* https://github.com/byuksel/bootstrap-backbone-starter-template.git
 
 # BLOG
 * https://blog.cleancoder.com/uncle-bob/2014/11/24/FPvsOO.html
+
+# Mobile 
+* https://github.com/akveo/chernika-mobile
+* https://github.com/zebapy/react-redux-parse-server
+
+
+# Template
+* https://github.com/coreui/coreui-free-bootstrap-admin-template
+* https://github.com/voidlabs/mosaico
+* https://github.com/akveo/blur-admin.git
+
+# Website
+* https://github.com/poppindouble/DreamLand
+
+# Virtual Reality
+* 
+https://aframe.io/
