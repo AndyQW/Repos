@@ -19,6 +19,10 @@
 # BLOG
 * https://blog.cleancoder.com/uncle-bob/2014/11/24/FPvsOO.html
 
+# AWS
+* https://aws.amazon.com/blogs/compute/new-deployment-options-for-aws-lambda/
+
+
 # Mobile 
 * https://github.com/akveo/chernika-mobile
 * https://github.com/zebapy/react-redux-parse-server
@@ -33,5 +37,4 @@
 * https://github.com/poppindouble/DreamLand
 
 # Virtual Reality
-* 
-https://aframe.io/
+* https://aframe.io/
