@@ -38,3 +38,7 @@
 
 # Virtual Reality
 * https://aframe.io/
+
+# Data Visualization
+* https://github.com/pegasystems/somaria
+
